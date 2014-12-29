@@ -133,7 +133,7 @@ html {
     #footer {
       &.oa-footer {
         margin: 50px auto;
-        width: 100%;
+        width: $mainWidth;
 
         .oa-footer-desc {
           position: relative;
