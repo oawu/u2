@@ -1,0 +1,119 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+
+
+@import "_oa";
+@include font-face("Josefin Sans", font-files("josefin_sans/JosefinSans-Bold.ttf"));
+@include font-face(Monaco, font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+
+* {
+  vertical-align: top;
+  @include selection(rgba(150, 180, 230, 1.0000), rgba(237, 239, 244, 1.0000));
+  @include font-smoothing(antialiased);
+
+  &, &:after, &:before {
+    @include box-sizing(border-box);
+  }
+}
+
+a {
+  color: rgba(42, 90, 149, 0.7);
+  font-weight: bold;
+  @include transition(all .3s);
+
+  &:hover {
+    color: rgba(12, 65, 109, .85);
+  }
+}
+
+*.clearfix {
+  *zoom: 1;
+
+  &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+    clear: both;
+  }
+}
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: medium;
+    font-family: "Josefin Sans" Monaco;
+    background: $mainBackgroundColor $mainBackgroundImage;
+    color: rgba(50, 50, 50, 0.7);
+
+    @include font-smoothing(antialiased);
+    @include box-shadow(none);
+
+    &:before {
+      content: "";
+      position: fixed;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      z-index: 100;
+    }
+
+    #container {
+      position: relative;
+      display: inline-block;
+      margin: $mainTop auto $mainBottom auto;
+      text-align: left;
+      border: 1px solid rgba(255, 0, 0, .3);
+      width: $mainWidth;
+    }
+    #footer {
+      &.oa-footer {
+        margin: 50px auto;
+        width: 100%;
+
+        .oa-footer-desc {
+          position: relative;
+          text-align: center;
+
+          .oa-footer-split-line {
+            position: absolute;
+            top: 50%;
+            z-index: -1;
+            width: 100%;
+            height: 2px;
+            @include opacity(.6);
+
+            hr {
+              margin-top: 0;
+            }
+          }
+          .oa-footer-content {
+            background-color: rgba(233, 234, 237, 1);
+            display: inline-block;
+            margin: 0 auto;
+            padding: 5px 10px;
+            background: $mainBackgroundColor $mainBackgroundImage;
+            line-height: 20px;
+
+            b {
+              color: rgba(50, 50, 50, 0.9);
+              font-weight: normal;
+            }
+            a {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+}
