@@ -23,7 +23,7 @@
     if ((typeof (Storage) !== 'undefined') && (s = localStorage.getItem ('u2'))) {
       s = JSON.parse (s);
     } else {
-      s = { l: [],
+      s = { l: ["zKx2B8WCQuw","wmWVlsAUy4A","BAd9hiPVW7k","k410JeMj0oU","0KSOMA3QBU0","6BJDrbERiyc"],
             a: $('#isAuto').prop ("checked"),
             p: $('#isLoopAll').prop ("checked"),
             o: $('#isLoopOne').prop ("checked"),
