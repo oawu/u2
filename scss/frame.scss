@@ -39,6 +39,52 @@ a {
   }
 }
 
+*.loading {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  margin-top: 5px;
+
+  @include border-radius(50%);
+  @include box-shadow(inset 0 0 5px rgba(68, 68, 68, 0.7), 0 0 5px rgba(255, 255, 255, 0.475));
+  $loadingWeight: 6px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    @include border-radius(50%);
+    @include animation (spin .5s infinite linear);
+    @include background-image(linear-gradient(transparent 60%, rgba(0, 0, 0, 0.3) 100%));
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    margin: auto;
+    width: calc(100% - #{$loadingWeight} * 2);
+    height: calc(100% - #{$loadingWeight} * 2);
+    top: $loadingWeight;
+    left: $loadingWeight;
+    background: $mainBackgroundImage;
+
+    @include border-radius(50%);
+    @include box-shadow(0 0 5px rgba(68, 68, 68, 0.7), inset 0 0 5px rgba(255, 255, 255, 0.475));
+  }
+  @include keyframes(spin) {
+    to {
+      @include rotate(360deg);
+    }
+  }
+}
 html {
   height: 100%;
 
@@ -67,12 +113,21 @@ html {
       z-index: 100;
     }
 
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 100px;
+      background: $mainBackgroundColor $mainBackgroundImage;
+      z-index: 999999;
+    }
     #container {
       position: relative;
       display: inline-block;
       margin: $mainTop auto $mainBottom auto;
       text-align: left;
-      border: 1px solid rgba(255, 0, 0, .3);
       width: $mainWidth;
     }
     #footer {

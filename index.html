@@ -18,6 +18,7 @@
 
     <script src="./res/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript"></script>
     <script src="./res/imgLiquid_v0.9.944/imgLiquid-min.js" language="javascript" type="text/javascript"></script>
+    <script src="./res/underscore_v1.7.0/underscore-min.js" language="javascript" type="text/javascript"></script>
 
     <script src="./res/oa-imgLiquid.js" language="javascript" type="text/javascript"></script>
     <script src="./res/oa-scrollSliderView.js" language="javascript" type="text/javascript"></script>
@@ -28,8 +29,43 @@
     <script src="./js/frame.js" language="javascript" type="text/javascript"></script>
   </head>
   <body lang="zh-tw">
+    <div id='loading'>
+      <div class='loading'></div>
+    </div>
 
     <div id="container" class='clearfix'>
+      <div class='top clearfix'>
+        <div class='left'>
+          <div id='player'></div>
+        </div>
+        <div class='right'>
+          <div class='input_bar clearfix'>
+            <input type='text' id='input' vale='' placeholder='請輸入要加入的 Youtube 影片網址..' class='input' />
+            <button class='oa-btn blue-btn' id='addInput'>確定加入</button>
+          </div>
+
+          <div class='switchs clearfix'>
+          </div>
+
+          <div class='buttons'>
+            <button class='oa-btn blue-btn' id='addPlaybackRate' data-a='加快' data-b='加快' data-n='2'>加快</button>
+            <button class='oa-btn blue-btn' id='subPlaybackRate' data-a='減慢' data-b='減慢' data-n='2'>減慢</button>
+            <button class='oa-btn blue-btn' id='stop'>播放&暫停 (空白鍵)</button>
+            <br/>
+            <br/>
+            <button class='oa-btn blue-btn' id='prev'>上首 (←)</button>
+            <button class='oa-btn blue-btn' id='next'>下首 (→)</button>
+            <button class='oa-btn blue-btn' id='add'>大聲 (↑)</button>
+            <button class='oa-btn blue-btn' id='sub'>小聲 (↓)</button>
+            <!-- <button class='oa-btn blue-btn' id='clean' data-a='清除選單' data-b='清除選單' data-n='2'>清除選單</button> -->
+          </div>
+        </div>
+      </div>
+      <div class='bottom'>
+
+      </div>
+    </div>
+    <!-- <div id="container" class='clearfix'>
       <div class='u2'>
         <div id='player' class='play'></div>
         <div class='playlist'></div>
@@ -59,8 +95,7 @@
     <span class="swh-check"></span>
     <label for="blue">單首循環</label>
   </div>
-      <!-- <div id="player"></div> -->
-    </div>
+    </div> -->
 <!--
     <div id="footer" class="oa-footer">
       <div class="oa-footer-desc">

@@ -5,94 +5,192 @@
 
 
 @import "_oa";
-$u2Width: 450px;
-$playWidth: $u2Width - 20px;
+$leftWidth: 450px;
 
 $inputButton: 100px;
 
 html {
   body {
     #container {
-      .u2, .options {
-        float: left;
-        width: $u2Width;
-      }
-      .u2 {
-        text-align: center;
-        .play {
-          display: inline-block;
-          width: $playWidth;
-          height: ($playWidth) * 9 / 16;
-          margin: 0 auto;
-          border: 1px solid rgba(255, 0, 0, .3);
+      .top {
+
+        .left, .right {
+          float: left;
+          width: calc(100% - #{$leftWidth});
         }
-        .playlist {
-          margin-top: 20px;
-          // border-top: 1px solid rgba(255, 0, 0, .3);
-          display: 100%;
-          .silders {
+        .left {
+          width: $leftWidth;
+          margin-bottom: 20px;
+        }
 
-            .silder {
-              @include opacity(.7);
-              &:hover {
-                @include scale(1.1);
-              }
-              &.active {
-                border: 2px solid rgba(39, 40, 34, 1);
-                @include opacity(1);
-                @include scale(1.2);
-              }
-              .delete {
-                position: absolute;
-                right: -10px;
-                top: -10px;
-                display: inline-block;
-                width: 20px;
-                height: 20px;
-                border: 1px solid rgba(255, 0, 0, .3);
-                text-align: center;
+        .right {
+          .input_bar {
+            margin-top: 20px;
+            padding: 10px;
 
-                background-color: rgba(255, 50, 50, 1.00);
-                border: 1px solid rgba(212, 63, 58, 1.00);
-                cursor: pointer;
-
-                @include border-radius(50%);
-                @include box-shadow(1px 1px 3px 1px rgba(0, 0, 0, 0.3), inset 1px 1px 1px rgba(255, 255, 255, 0.4));
-
-                &:hover {
-                  @include box-shadow(1px 1px 2px 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px rgba(255, 255, 255, 0.6))
-                }
-                &:active {
-                  @include box-shadow(1px 1px 2px 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px rgba(0, 0, 0, 0.4))
-                }
-              }
+            input.input {
+              float: left;
+              width: calc(100% - #{$inputButton + 10px});
+              outline: 0;
+              padding: 10px;              
+            }
+            .oa-btn {
+              float: right;
+              width: $inputButton;
+              padding: 10px 8px;
+              margin-top: 2px;
             }
           }
+          .switchs {
+            text-align: center;
+            margin: 20px auto;
 
+            .oa-jelly-switch {
+              margin: 5px;
+              label {
+                cursor: pointer;
+              }
+            }   
+          }
+          .buttons {
+            text-align: center;
+            margin: 20px auto;
+
+            button {
+              margin: auto 5px;
+            }
+          }
+        }
+        .left {
+          text-align: center;
+
+          #player {
+            width: $leftWidth - 20px;
+            height: ($leftWidth - 20px) * 9 / 16;
+            border: 1px solid rgba(163, 163, 163, .8);
+            margin: auto;
+          }
         }
       }
-      .options {
-        width: calc(100% - #{$u2Width});
+      .bottom {
+        padding-top: 20px;
+        border-top: 1px solid rgba(163, 163, 163, .8);
 
-        div.input {
-          padding: 5px;
-          border-bottom: 1px solid rgba(255, 0, 0, .3);
-
-          input.input {
-            float: left;
-            width: calc(100% - #{$inputButton + 10px});
-            outline: 0;
-            padding: 10px;
+        .silder {
+          @include opacity(.7);
+          &.active {
+            border: 2px solid rgba(39, 40, 34, 1);
+            @include opacity(1);
+            @include scale(1.2);
           }
-          .oa-btn {
-            float: right;
-            width: $inputButton;
-            font-size: 13px;
-            padding: 10px 8px;
-            margin-top: 1px;
+        }
+        .delete {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border: 2px solid $mainBackgroundColor;
+          border-top: 0;
+          border-right: 0;
+          background-color: rgba(25, 25, 25, .7);
+          color: #aaa;
+          text-align: center;
+          cursor: pointer;
+
+          @include border-radius(0 0 0 4px);
+          @include transition(all .3s);
+
+          &:hover {
+            color: #fff;
+            background-color: rgba(25, 25, 25, 1);
           }
         }
       }
     }
+
+  //   #container {
+  //     .u2, .options {
+  //       float: left;
+  //       width: $u2Width;
+  //     }
+  //     .u2 {
+  //       text-align: center;
+  //       .play {
+  //         display: inline-block;
+  //         width: $playWidth;
+  //         height: ($playWidth) * 9 / 16;
+  //         margin: 0 auto;
+  //         border: 1px solid rgba(255, 0, 0, .3);
+  //       }
+  //       .playlist {
+  //         margin-top: 20px;
+  //         // border-top: 1px solid rgba(255, 0, 0, .3);
+  //         display: 100%;
+  //         .silders {
+
+  //           .silder {
+  //             @include opacity(.7);
+  //             &:hover {
+  //               @include scale(1.1);
+  //             }
+  //             &.active {
+  //               border: 2px solid rgba(39, 40, 34, 1);
+  //               @include opacity(1);
+  //               @include scale(1.2);
+  //             }
+  //             .delete {
+  //               position: absolute;
+  //               right: -10px;
+  //               top: -10px;
+  //               display: inline-block;
+  //               width: 20px;
+  //               height: 20px;
+  //               border: 1px solid rgba(255, 0, 0, .3);
+  //               text-align: center;
+
+  //               background-color: rgba(255, 50, 50, 1.00);
+  //               border: 1px solid rgba(212, 63, 58, 1.00);
+  //               cursor: pointer;
+
+  //               @include border-radius(50%);
+  //               @include box-shadow(1px 1px 3px 1px rgba(0, 0, 0, 0.3), inset 1px 1px 1px rgba(255, 255, 255, 0.4));
+
+  //               &:hover {
+  //                 @include box-shadow(1px 1px 2px 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px rgba(255, 255, 255, 0.6))
+  //               }
+  //               &:active {
+  //                 @include box-shadow(1px 1px 2px 1px rgba(0, 0, 0, 0.5), inset 1px 1px 1px rgba(0, 0, 0, 0.4))
+  //               }
+  //             }
+  //           }
+  //         }
+
+  //       }
+  //     }
+  //     .options {
+  //       width: calc(100% - #{$u2Width});
+
+  //       div.input {
+  //         padding: 5px;
+  //         border-bottom: 1px solid rgba(255, 0, 0, .3);
+
+  //         input.input {
+  //           float: left;
+  //           width: calc(100% - #{$inputButton + 10px});
+  //           outline: 0;
+  //           padding: 10px;
+  //         }
+  //         .oa-btn {
+  //           float: right;
+  //           width: $inputButton;
+  //           font-size: 13px;
+  //           padding: 10px 8px;
+  //           margin-top: 1px;
+  //         }
+  //       }
+  //     }
+  //   }
   }
 }
