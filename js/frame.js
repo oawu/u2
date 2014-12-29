@@ -147,6 +147,17 @@
         player.loadVideoById ($(this).data ('id'));
       }
     });
+    $silders.find ('.delete').click (function (e) {
+      var $silder = $(this).parents ('.silder');
+
+      s.l.splice (s.l.indexOf ($silder.data ('id')), 1);
+      save ();
+      $silder.remove ();
+      
+      setTimeout (function () {
+        location.reload ();
+      }, 100)
+    });
 
     if (s.l.length)
       $silders.find ('.silder').first ().addClass ('active');
