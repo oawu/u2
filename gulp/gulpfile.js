@@ -41,15 +41,7 @@ gulp.task ('res-uglify', function () {
 gulp.task ('minify-html', function () {
   var opts = {comments: true, spare:true};
 
-  gulp.src ('./root/article/**/*.html')
+  gulp.src ('./root/index.html')
       .pipe (minifyHTML (opts))
-      .pipe (gulp.dest ('./root/article/'))
-
-  gulp.src ('./root/articles/**/*.html')
-      .pipe (minifyHTML (opts))
-      .pipe (gulp.dest ('./root/articles/'))
-
-  gulp.src ('./root/tag/**/*.html')
-      .pipe (minifyHTML (opts))
-      .pipe (gulp.dest ('./root/tag/'))
+      .pipe (gulp.dest ('./root/'))
 });
