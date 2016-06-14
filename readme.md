@@ -16,7 +16,7 @@
 
 <br/>
 ## Demo
-Demo: [http://comdan66.github.io/u2/](http://comdan66.github.io/u2/)
+Demo: [http://works.ioa.tw/u2/](http://works.ioa.tw/u2/)
 
 <br/>
 ## 使用
@@ -29,7 +29,7 @@ Demo: [http://comdan66.github.io/u2/](http://comdan66.github.io/u2/)
 
 * E-mail - <comdan66@gmail.com>
 
-* 作品名稱 - [OA's Youtube](http://comdan66.github.io/u2/)
+* 作品名稱 - [OA's Youtube](http://works.ioa.tw/u2/)
 
 * GitHub - [youtube](https://github.com/comdan66/u2)
 
