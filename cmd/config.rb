@@ -1,25 +1,35 @@
-# require 'ceaser-easing'
-# require 'compass/import-once/activate'
+require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = "/blog"
-css_dir = "../css/"
-sass_dir = "../scss/"
 
-fonts_dir = "font/"
-fonts_path = "../font/"
+http_path = "/u2"
+
+fonts_dir = "font"
+fonts_path = "../font"
+
+images_dir = "img"
+images_path = "../img"
+
+css_dir = "../css"
+sass_dir = "../scss"
+
+add_import_path = "./imports"
+additional_import_paths = ["./imports"]
+
 # images_dir = "images"
 # javascripts_dir = "javascripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
+# output_style = :expanded
 output_style = :compressed
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
+# line_comments = false
 line_comments = false
 
 
