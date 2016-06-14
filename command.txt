@@ -1,2 +1,0 @@
-
-cd gulp && npm install .  && gulp minify && gulp gh-pages && cd .. && git add -A && git commit -m 'Minify js、html, fix gh-pages path bug.' && git push origin gh-pages --force
